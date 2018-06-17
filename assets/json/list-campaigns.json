@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Hyundai i40 Campaign",
+    "date": 1494848040,
+    "recipients": 1896,
+    "opened": 41,
+    "cta": 39,
+    "responses": 45,
+    "messages": 0
+  },
+  {
+    "title": "New Hyundai Tucson Campaign",
+    "date": 1494845880,
+    "recipients": 5121,
+    "opened": 89,
+    "cta": 18,
+    "responses": 37,
+    "messages": 3
+  },
+  {
+    "title": "Hyundai i30 Campaign",
+    "date": 1494843120,
+    "recipients": 8560,
+    "opened": 63,
+    "cta": 55,
+    "responses": 75,
+    "messages": 1
+  },
+  {
+    "title": "Hyundai Santa Fe Sale Campaign",
+    "date": 1494784920,
+    "recipients": 732,
+    "opened": 16,
+    "cta": 78,
+    "responses": 9,
+    "messages": 0
+  },
+  {
+    "title": "Hyundai Premium Campaign",
+    "date": 1494784920,
+    "recipients": 64,
+    "opened": 72,
+    "cta": 25,
+    "responses": 51,
+    "messages": 24
+  }
+]

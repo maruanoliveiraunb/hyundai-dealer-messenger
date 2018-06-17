@@ -1,0 +1,26 @@
+[
+  {
+    "type": 1,
+    "user": "Mike Copeland",
+    "date_time": "15 May 2017 at 11:34 AM",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus vitae orci non interdum. Integer."
+  },
+  {
+    "type": 2,
+    "user": "Mike Copeland",
+    "date_time": "15 May 2017 at 10:58 AM",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus vitae orci non interdum. Integer."
+  },
+  {
+    "type": 1,
+    "user": "Flora Brady",
+    "date_time": "15 May 2017 at 10:12 AM",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus vitae orci non interdum. Integer."
+  },
+  {
+    "type": 3,
+    "user": "Flora Brady",
+    "date_time": "15 May 2017 at 10:12 AM",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc cursus vitae orci non interdum. Integer."
+  }
+]

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html ng-app="hyundai-dealer">
+<head>
+	<title>Hyundai Dealer Messenger - Lastest Campaigns</title>
+	<meta name="description" content="It's a demo frontend page">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png"/>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link href="./assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
+</head>
+<body ng-controller="MainController">
+  <div>
+    <section class="main-header">
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="./assets/img/logo.jpg" class="logo" alt="Hyundai Dealer Messenger Logo">
+        </div>
+        <div class="col-lg-8 text-right">
+          <div class="main-menu">
+            <ul>
+              <li class="active"><a href="#">Campaigns</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">Reports</a></li>
+            </ul>
+          </div>
+          <div class="main-notifications">
+          	<a href="#">
+	            <i class="fa fa-bell"></i>
+	        </a>
+          </div>
+          <div class="main-user">
+			<a href="#">
+				<img src="./assets/img/user-photo.jpg" alt="User Photo">
+				<div class="user-info">
+				  <p>Birdie Willians</p>
+				  <p>Selling Specialist</p>
+				</div>
+			</a>
+          </div>
+          <div class="main-configurations">
+          	<a href="#"><i class="fa fa-ellipsis-h"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="submenu-header">
+		<div class="row">
+			<div class="col-md-8 text-left">
+			  <nav class="submenu-menu">
+			    <ul>
+			      <li class="active"><a href="#">Sent Campaings</a></li>
+			      <li><a href="#">Drafts</a></li>
+			      <li><a href="#">Templates</a></li>
+			    </ul>
+			  </nav>
+			</div>
+			<div class="col-md-4 text-right">
+				<button class="button-right"><i class="fa fa-plus-circle"></i>Create Campaign</button>
+			</div>
+		</div>
+    </section>
+    <section class="main-content">
+      <div class="row">
+        <div class="col-lg-9">
+        	<div class="content-main">
+				<header>
+					<div class="row">
+						<div class="col-md-6">
+							<h1><strong>Latest Campaigns</strong></h1>
+						</div>
+						<div class="col-md-6 text-right">
+							<div>
+								<label>Sort By:</label>
+								<select ng-model="sortType">
+									<option value="date">Date</option>
+									<option value="name">Name</option>
+									<option value="recipients">Recipients</option>
+									<option value="opened">Opened</option>
+									<option value="cta">CTA</option>
+									<option value="responses">Responses</option>
+									<option value="messages">Messages</option>
+								</select> 
+								<select ng-model="sortReverse">
+									<option ng-value="false">Ascendind</option>
+									<option ng-value="true">Descendind</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</header>
+				<main>
+					<table>
+					  <thead>
+					    <tr>
+					      <th><a href="" ng-click="sortType = 'name'">Campaign Title</a></th>
+					      <th><a href="" ng-click="sortType = 'recipients'">Recipients</a></th>
+					      <th><a href="" ng-click="sortType = 'opened'">Opened</a></th>
+					      <th><a href="" ng-click="sortType = 'cta'">CTA</a></th>
+					      <th><a href="" ng-click="sortType = 'responses'">Responses</a></th>
+					      <th><a href="" ng-click="sortType = 'messages'">New Messages</a></th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    <tr ng-repeat="campaign in campaigns | orderBy:sortType:sortReverse">
+					      <th>
+					        <a href="#">{{campaign.title}}</a>
+					        <small>Sent on {{campaign.date | date:'medium'}}</small>
+					      </th>
+					      <td>{{campaign.recipients}}</td>
+					      <td>{{campaign.opened}}%</td>
+					      <td>{{campaign.cta}}%</td>
+					      <td>{{campaign.responses}}%</td>
+					      <td ng-if="campaign.messages > 0"><span class="mark">{{campaign.messages}}</span></td>
+					      <td ng-if="campaign.messages == 0"><i class="fa fa-circle-o"></i></td>
+					    </tr>
+					    <tr ng-show="!campaigns.length">
+						    <td colspan="7">
+							    <p><i class="fa fa-exclamation-triangle"></i> Error while loading <strong>list-campaigns.json</strong> file!</p>
+							    <p>Try loading this page with a web server.</p>
+							</td>
+						</tr>
+					  </tbody>
+					</table>
+					<p class="text-right">
+						<a href="">See all campaigns <i class="fa fa-long-arrow-right"></i></a>
+					</p>
+				</main>
+				<footer>
+					<div class="row">
+					  <div class="col-md-6">
+					    <p><strong>@2017 Dealer Messenger</strong></p>
+					    <p>Contact Support	<i class="fa fa-circle-o"></i> 	Dealer Messenger Academy</p>
+					  </div>
+					  <div class="col-md-6 text-right">
+					    <img src="./assets/img/footer-logo.jpg">
+					  </div>
+					</div>
+				</footer>
+		    </div>
+        </div>
+        <div class="col-lg-3">
+        	<aside>
+        		<h3>Notifications feed</h3>
+        		<form>
+        			<input type="text" placeholder="Use filters to see a specific type of content">
+        			<button><i class="fa fa-search"></i></button>
+        		</form>
+
+        		<div class="notifications-filter">
+	        		<ul class="notifications-filter-menu" ng-init="selectedNotification = 'all'">
+	        			<li ng-class="{'active':selectedNotification === 'all'}" ng-click="notificationType(0); selectedNotification = 'all'">
+	        				<a href=""><i class="fa fa-bell"></i></a>
+	        			</li>
+	        			<li ng-class="{'active':selectedNotification === 'comment'}" ng-click="notificationType(1); selectedNotification = 'comment'">
+	        				<a href=""><i class="fa fa-commenting-o"></i></a>
+	        			</li>
+	        			<li ng-class="{'active':selectedNotification === 'call'}" ng-click="notificationType(2); selectedNotification = 'call'">
+	        				<a href=""><i class="fa fa-mobile-phone"></i></a>
+	        			</li>
+	        			<li ng-class="{'active':selectedNotification === 'click'}" ng-click="notificationType(3); selectedNotification = 'click'">
+	        				<a href=""><i class="fa fa-hand-o-up"></i></a>
+	        			</li>
+	        		</ul>
+	        		<div class="notifications-filter-content">
+	        			<h4>All notifications</h4>
+	        			<span class="type-date"><i class="fa fa-circle-o"></i>Today</span>
+
+	        			<ul>
+	        				<!--<li ng-repeat="notification in notifications | filter:{type:notificationTypeFilter}">-->
+	        				<li ng-repeat="notification in notifications | filter:notificationTypeFilter">
+	        					<div ng-switch="notification.type" class="notification-wrapper">
+								  <div ng-switch-when="1" class="notification-content">
+								  	<div class="type"><i class="fa fa-commenting-o"></i></div>
+		        					<div class="note-content">
+			        					<div class="note-headers">
+			        						<p class="user">{{notification.user}} <span>wrote</span></p>
+			        						<p class="date">{{notification.date_time}}</p>
+			        						<a href="#" class="reply">reply <i class="fa fa-long-arrow-right"></i></a>
+			        					</div>
+			        					<div class="note-info">
+			        						<p>{{notification.content}}</p>
+			        					</div>
+			        				</div>
+								  </div>
+								  <div ng-switch-when="2" class="notification-content">
+								  	<div class="type"><i class="fa fa-mobile-phone"></i></div>
+		        					<div class="note-content">
+			        					<div class="note-headers">
+			        						<p class="user">{{notification.user}} <span>called</span></p>
+			        						<p class="date">{{notification.date_time}}</p>
+			        						<a href="#" class="reply">call <i class="fa fa-long-arrow-right"></i></a>
+			        					</div>
+			        					<div class="note-info">
+			        						<p>{{notification.content}}</p>
+			        					</div>
+			        				</div>
+								  </div>
+								  <div ng-switch-when="3" class="notification-content">
+								  	<div class="type"><i class="fa fa-hand-o-up"></i></div>
+		        					<div class="note-content">
+			        					<div class="note-headers">
+			        						<p class="user">{{notification.user}} <span>called</span></p>
+			        						<p class="date">{{notification.date_time}}</p>
+			        						<a href="#" class="reply">details <i class="fa fa-long-arrow-right"></i></a>
+			        					</div>
+			        					<div class="note-info">
+			        						<p>{{notification.content}}</p>
+			        					</div>
+			        				</div>
+								  </div>
+								</div>
+	        				</li>
+	        				<li ng-show="!notifications.length">
+								<div class="notification-content">
+									<div class="type"><i class="fa fa-exclamation-triangle"></i></div>
+									<div class="note-content">
+										<div class="note-headers">
+											<p class="user">Error while loading <strong>list-notifications.json</strong> file!</p>
+										</div>
+										<div class="note-info">
+											<p>Try loading this page with a web server.</p>
+										</div>
+									</div>
+								</div>
+							</li>
+	        			</ul>
+
+	        		</div>
+        		</div>
+        	</aside>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script type="text/javascript" src="./assets/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+/*** Pattern CSS ***/
+$font-stack: 'Source Sans Pro', sans-serif
+$primary-color: #7b8796
+$second-color: #4265ed
+$third-color: #acb8c8
+$background-color: #f6f9fc
+
+
+/*** Styling the page ***/
+body
+	font-family: $font-stack!important
+	font-size: 16px
+	overflow-x: hidden
+
+.main-header
+	height: 80px
+	background-color: $second-color
+	color: white
+	position: relative
+	z-index: 2
+
+	.logo
+		margin-top: 25px
+		margin-left: 20px
+
+	.main-menu,
+	.main-notifications,
+	.main-user,
+	.main-configurations
+		display: inline-block
+		border-right: solid 1px #3656d6
+
+	.main-menu
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+
+			li
+				display: inline-block
+
+				a
+					color: #fff
+					text-transform: uppercase
+					padding: 28px 35px
+					display: block
+					position: relative
+					opacity: .6
+
+					&:hover
+						text-decoration: none
+						opacity: 1
+			.active
+				a
+					opacity: 1
+
+					&:after
+						font-family: "FontAwesome"
+						content: "\f10c"
+						position: absolute
+						left: 50%
+						bottom: 10px
+						transform: translate(-50%)
+						font-size: .5rem
+						opacity: 0.5
+
+	.main-notifications
+		a
+			display: block
+			padding: 28px 35px
+			color: #fff
+
+	.main-user
+		a
+			padding: 0 35px
+			display: block
+
+		img,
+		div
+			display: inline-block
+
+		div
+			position: relative
+			top: 10px
+
+			p
+				margin: 0
+				color: #fff
+				font-size: .9rem
+				line-height: 1.2em
+
+	.main-configurations
+		a
+			padding: 24px 35px
+			display: block
+			color: #fff
+			font-size: 1.3rem
+
+.submenu-header
+	height: 70px
+	color: $third-color
+	position: relative
+	z-index: 1
+	-webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1)
+	-moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1)
+	box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.1)
+
+	nav
+		display: inline-block
+		
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+
+			li
+				display: inline
+			
+				a			
+					display: inline-block
+					font-size: 1rem
+					text-transform: uppercase
+					color: $third-color
+					padding: 22px 30px
+					text-decoration: none
+					
+					&:hover
+						color: $second-color
+						border-bottom: 2px solid $second-color
+						
+			.active
+				a
+					color: $second-color
+					border-bottom: 2px solid $second-color
+	
+	button
+		display: inline-block
+		cursor: pointer
+		background: $second-color
+		border: none
+		border-radius: 5px
+		padding: 10px 25px
+		color: #fff
+		margin-top: 13px
+		margin-right: 25px
+
+		i
+			margin-right: 15px
+
+.main-content
+	background: $background-color
+
+	.content-main
+		height: calc(100vh - 150px)
+		padding: 5% 10%
+
+		header
+			margin-bottom: 50px
+	
+			h1
+				color: $primary-color
+				font-size: 1.8rem
+
+			label
+				color: $third-color
+
+			select
+				background: none
+				border: none
+				color: $second-color
+
+		main
+			table
+				width: 100%
+				border-collapse: separate 
+				border-spacing: 0 .5em
+				margin-bottom: 25px
+
+				thead
+					th
+						a
+							color: $third-color
+							font-weight: 100
+							font-size: .6rem
+							text-transform: uppercase
+							text-align: center
+
+						&:first-child
+							a
+								text-align: left
+				tbody
+					tr
+						border-radius: 5px
+
+					th,
+					td
+						padding: 15px
+						background: #fff
+						border-top: solid 1px #eff2f6
+						border-bottom: solid 1px #eff2f6
+
+					th
+						border-left: solid 1px #eff2f6
+						border-top-left-radius: 5px
+						border-bottom-left-radius: 5px
+
+					td
+						text-align: center
+						color: $primary-color
+
+						&:last-child
+							border-right: solid 1px #eff2f6
+							border-top-right-radius: 5px
+							border-bottom-right-radius: 5px
+
+						i
+							font-weight: bold
+							font-size: .6rem
+
+						.mark
+							padding: .2em
+							background-color: $second-color
+							border-radius: 50%
+							width: 25px
+							height: 25px
+							display: block
+							margin: auto
+							color: #fff
+							line-height: 1.5em
+							font-size: .8rem
+
+			a
+				color: $second-color
+				font-weight: normal
+				display: block
+
+			small
+				color: $third-color
+				font-size: .8rem
+
+		footer
+			position: absolute
+			bottom: 50px
+			left: 0
+			width: calc(100% - 20% - 30px)
+			right: 0
+			margin: auto
+
+			p
+				color: $third-color
+				font-size: .8rem
+				line-height: 1.5em
+				margin-bottom: 10px
+
+				strong
+					color: $primary-color
+
+	aside
+		height: calc(100vh - 150px)
+		background: #fff
+		padding: 35px 25px
+		overflow: scroll
+		position: relative
+
+		&:after
+			content: ''
+			position: fixed
+			bottom: 0
+			width: 100%
+			height: 60px
+			background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.99) 99%, rgba(255,255,255,1) 100%)
+			background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.99) 99%,rgba(255,255,255,1))
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.99) 99%,rgba(255,255,255,1) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+
+		h3
+			color: $primary-color
+
+		form
+			input
+				background: #fff
+				color: $third-color
+				border: none
+				width: calc(100% - 45px)
+
+				&::-webkit-input-placeholder
+					color: $third-color
+				&::-moz-placeholder
+					color: $third-color
+				&:-ms-input-placeholder
+					color: $third-color
+				&:-moz-placeholder
+					color: $third-color
+
+			button
+				background: #fff
+				border: none
+				color: $third-color
+				font-size: 1.5rem
+				width: 40px
+
+		.notifications-filter
+
+			.notifications-filter-menu
+				list-style: none
+				padding: 0
+				width: 100%
+				display: block
+				margin: 30px 0
+
+				li
+					display: inline-block
+					margin-right: 1%
+					width: 23%
+						
+					a
+						display: block
+						color: $third-color
+						background: #f5f8fc
+						text-align: center
+						font-size: 1.5rem
+						padding: 10px 5px
+						border-radius: 5px
+
+						&:hover
+							color: #fff
+							background: $second-color
+
+				.active
+					a
+						color: #fff
+						background: $second-color
+
+			.notifications-filter-content
+				h4
+					font-size: 1rem
+					text-transform: uppercase
+					color: $third-color
+					padding-bottom: 20px
+					margin-bottom: 20px
+					border-bottom: solid 1px $third-color
+
+				.type-date
+					display: block
+					color: $third-color
+					font-size: .9rem
+					margin-bottom: 35px
+
+					i
+						font-size: .6rem
+						margin-right: 5px
+
+				ul
+					list-style: none
+					padding: 0
+					margin: 0
+
+					li 
+						position: relative
+						margin-bottom: 45px
+
+						.type
+							position: absolute
+							top: 0
+							left: 0
+							color: $primary-color
+
+							i
+								font-size: 1.5rem
+
+						.note-content
+							padding-left: 35px
+							display: inline-block
+
+							.note-headers
+								position: relative
+								margin-bottom: 10px
+
+								p
+									margin: 0
+
+								.user
+									color: $second-color
+
+									span
+										color: $third-color
+								.date
+									color: $primary-color
+									font-size: .9rem
+
+								.reply
+									color: $second-color
+									position: absolute
+									bottom: 0
+									right: 0
+									font-size: .9rem
+
+							.note-info
+								padding: 10px
+								border-radius: 5px
+								background: #f5f8fc
+								color: $third-color
+								line-height: 1.3em
+
+								p
+									margin-bottom: 0
+
+/*** Responsive Styles ***/
+@media (max-width: 1024px)
+	.row
+		margin: 0
+
+		.col-lg-4,
+		.col-lg-8,
+		.col-md-8,
+		.col-md-4
+			padding-right: 0!important
+			padding-left: 0!important
+
+	.main-header
+		height: initial
+
+		.main-menu
+			ul
+				li
+					a
+						padding: 28px 15px
+
+		.main-notifications
+			a
+				padding: 28px 20px
+
+		.main-configurations
+			a
+				padding: 24px 25px
+
+	.main-content
+		.content-main
+			padding: 20px
+			height: initial
+
+			footer
+				position: relative
+				bottom: 0
+				text-align: center
+				width: 100%
+
+				.text-right
+					text-align: center!important
+
+		aside
+			height: initial
+
+@media (max-width: 640px)
+	.main-header .main-menu, 
+	.main-header .main-notifications, 
+	.main-header .main-user, 
+	.main-header .main-configurations
+		text-align: center
+
+	.main-header
+		.main-menu
+			width: 100%
+
+	.main-header
+		.main-notifications
+			a
+				padding: 24px 30px
+	.main-header 
+		.main-configurations 
+			a
+				padding: 24px 30px
+
+	.submenu-header 
+		height: initial
+
+		nav 
+			ul 
+				li 
+					a
+						padding: 15px 20px
+
+		button
+			margin: 20px auto
+			display: block
+
+	.main-content 
+		.content-main
+			header
+				.text-right
+					text-align: left!important
+
+			main
+				overflow-x: scroll
+
+@media (max-width: 375px)
+	.main-header 
+		.main-notifications 
+			a
+				padding: 20px 20px
+		
+		.main-configurations 
+			a
+				padding: 20px 20px
+
+	.submenu-header
+		nav
+			ul
+				li
+					a
+						padding: 15px 18px
+
+@media (max-width: 320px)
+	.main-header
+		.logo
+			margin: 0
+
+		.main-menu
+			ul
+				li
+					a
+						padding: 20px 12px
+
+		.main-user
+			a
+				padding: 0 20px
+
+	.submenu-header
+		nav
+			ul
+				li
+					a
+						padding: 10px 10px
+
+
+
+
+
+
+
+
+
